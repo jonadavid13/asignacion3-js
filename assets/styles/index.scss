@@ -34,90 +34,94 @@ body > * {
         padding: 3px 10px;
         border: none;
     }
+    
 }
 
 .main-container {
     min-height: calc(100vh - 114px);
 
-    .page-title {
-        border-bottom: solid #b5c3d6 .5px;
-    }
+    .main-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    .buttons-container {
-        width: fit-content;
-        
-        .ejercicio-link {
-            width: 100%;
-            margin-bottom: 10px;
+        .section-title {
+            font-weight: 500;
+            font-size: 20px;
         }
     }
 
-    .ejercicio-container {
+    .vehicles-container {
         margin-top: 15px;
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-
-            #btnCargar {
-                margin-left: 20px;
-            }
-        }
-
-        .actividades-container {
+        
+        
+        .cards-container {
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             background-color: inherit;
 
-            .card-actividad {
+            .card {
                 margin-right: 15px;
                 margin-bottom: 15px;
                 width: 325px;
-
+    
+                .card-header {
+                    .card-title {
+                        font-size: 18px;
+                    }
+                }
+    
                 .card-body {
                     padding: 15px;
-
+    
                     .text-header {
                         margin-bottom: 10px;
                     }
-
+    
                     .title {
                         font-weight: 500;
                     }
-
+    
+                    .img-car {
+                        width: 100%;
+                        border-radius: 3px;
+                        margin-bottom: 10px;
+                    } 
+    
+                    .descripcion-car {
+                        margin-bottom: 0;
+                    }
+                
                     .text-group {
                         margin-bottom: 5px;
                     }
-
+    
                     .badge {
                         font-size: 14px;
                         font-weight: 450;
                     }
                 }
-
+    
                 .card-footer {
                     display: flex;
-                    justify-content: space-between;
-
-                    .btn-group {
-                        .btn {
-                            position: relative;
-                        }
-
-                        #editarActividad:hover {
-                            .label-editar {
-                                display: initial;
-                            }
-                        }
-
-                        #eliminarActividad:hover {
-                            .label-eliminar {
-                                display: initial;
-                            }
+    
+                    .btn {
+                        position: relative;
+                    }
+    
+                    #btnEditar:hover {
+                        .label-editar {
+                            display: initial;
                         }
                     }
-
+    
+                    #btnEliminar:hover {
+                        .label-eliminar {
+                            display: initial;
+                        }
+                    }
+    
                     .floatLabel {
                         display: none;
                         position: absolute;
@@ -131,13 +135,14 @@ body > * {
                         width: max-content;
                         transition: all 0.15s ease-in;
                     }
-
+    
                     .label-editar {
                         display: none;
                     }
                 }
             }
         }
+
     }
 }
 

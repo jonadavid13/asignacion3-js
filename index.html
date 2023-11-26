@@ -11,45 +11,103 @@
 </head>
 <body onload="cargarData()">
     <header class="header align-items-center">
-        <a class="main-link" href="/">
-            <h4 class="header-title">Aplicación iCar</h3>
-        </a>
+        <div class="main-link d-flex align-items-center">
+            <h4 class="header-title mb-0">iCar Plus </h4>
+            <span class="fs-5">| Concesionaria de Vehículos</span>
+        </div>
     </header>
     <main class="main-container">
+        <navbar class="main-navbar">
+            <span class="section-title">Vehículos Registrados</span>
+            <button type="button" class="btn btn-primary"
+                data-bs-toggle="modal" 
+                data-bs-target="#modalActividad" 
+                data-bs-whatever="inicial"
+                onclick="abrirForm()">
+                Registrar nuevo vehículo
+            </button>
+        </navbar>
+        <section class="vehicles-container">
+
+            <div class="cards-container">
+                <card class="card">
+                    <div class="card-header">
+                        <span class="card-title fw-semibold">Lancer Evolution</span>
+                    </div>
+                    <div class="card-body">
+                        <img class="img-car" src="/assets/images/lancer-evo.jpg" alt="Lancer Evo">
+                        <div class="text-group">
+                            <span class="text-title fw-semibold">Marca:</span>
+                            <span>Mitsubishi</span>
+                        </div>
+                        <div class="text-group">
+                            <span class="text-title fw-semibold">Año:</span>
+                            <span>2008</span>
+                        </div>
+                        <div class="text-group">
+                            <span class="text-title fw-semibold">Tipo:</span>
+                            <span>Sedan</span>
+                        </div>
+                        <p class="descripcion-car">Nuevo. 0Km. Motor V8. 5 puertas.</p>
+                    </div>
+                    <div class="card-footer d-flex">
+                        <button id="btnEditar" class="btn btn-warning me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                            </svg>
+                            <span class="floatLabel label-editar">Editar registro</span>
+                        </button>
+                        <button id="btnEliminar" class="btn btn-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                            </svg>
+                            <span class="floatLabel label-eliminar">Eliminar registro</span>
+                        </button>
+                    </div>
+                </card>
+            </div>
+        </section>
+
         <div class="modal fade" id="modalActividad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar actividad</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar nuevo vehículo</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="actividadForm">
+                        <div class="mb-3">
+                            <label for="marca" class="col-form-label">Marca:</label>
+                            <input class="form-control" type="text" id="marca" placeholder="Marca del vehículo"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modelo" class="col-form-label">Modelo:</label>
+                            <input class="form-control" type="text" id="modelo" placeholder="Modelo del vehículo"/>
+                        </div>
                         <div class="form-group mb-3">
-                            <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea name="" id="descripcion" class="form-control"></textarea>
+                            <label for="descripcion" class="form-label">Descripción:</label>
+                            <textarea name="" id="descripcion" class="form-control" placeholder="Breve descripción acerca del vehículo"></textarea>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="imagen" class="form-label">Imagen:</label>
+                            <input class="form-control" type="file" id="imagen">
                         </div>
                         <div class="mb-3">
-                            <label for="dias" class="col-form-label">Duración en días:</label>
-                            <input class="form-control" type="number" min="1" id="dias"></input>
+                            <label for="tipo" class="col-form-label">Tipo:</label>
+                            <input class="form-control" type="text" id="tipo" placeholder="Ej: Sedan, Camioneta, Deportivo"/>
                         </div>
                         <div class="mb-3">
-                            <label for="fechaInicio" class="col-form-label">Fecha de inicio:</label>
-                            <input class="form-control" type="date" id="fechaInicio"></input>
+                            <label for="year" class="col-form-label">Año:</label>
+                            <input class="form-control" type="number" min="1990" max="2030" id="year"></input>
                         </div>
-                        <div class="mb-3">
-                            <label for="fechaFin" class="col-form-label">Fecha de fin:</label>
-                            <input class="form-control" type="date" id="fechaFin"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="responsable" class="col-form-label">Responsable de la actividad:</label>
-                            <input class="form-control" type="text" id="responsable" placeholder="Persona encargada de la actividad"/>
-                        </div>
+                        
                     </form>
                 </div>
                 <div class="modal-footer">
                   <button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm()">Cerrar</button>
-                  <button id="botonCrear" type="button" class="btn btn-primary" onclick="crearActividad()">Crear</button>
+                  <button id="botonCrear" type="button" class="btn btn-primary" onclick="guardarRegistro()">Guardar</button>
                   <button id="submitEdit" type="button" class="btn btn-success">Editar</button>
                 </div>
               </div>

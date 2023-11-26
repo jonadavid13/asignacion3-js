@@ -35,68 +35,69 @@ body > * {
 .main-container {
   min-height: calc(100vh - 114px);
 }
-.main-container .page-title {
-  border-bottom: solid #b5c3d6 0.5px;
-}
-.main-container .buttons-container {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.main-container .buttons-container .ejercicio-link {
-  width: 100%;
-  margin-bottom: 10px;
-}
-.main-container .ejercicio-container {
-  margin-top: 15px;
-}
-.main-container .ejercicio-container .nav-container {
+.main-container .main-navbar {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
 }
-.main-container .ejercicio-container .nav-container #btnCargar {
-  margin-left: 20px;
+.main-container .main-navbar .section-title {
+  font-weight: 500;
+  font-size: 20px;
 }
-.main-container .ejercicio-container .actividades-container {
+.main-container .vehicles-container {
+  margin-top: 15px;
+}
+.main-container .vehicles-container .cards-container {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   background-color: inherit;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad {
+.main-container .vehicles-container .cards-container .card {
   margin-right: 15px;
   margin-bottom: 15px;
   width: 325px;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-body {
+.main-container .vehicles-container .cards-container .card .card-header .card-title {
+  font-size: 18px;
+}
+.main-container .vehicles-container .cards-container .card .card-body {
   padding: 15px;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-body .text-header {
+.main-container .vehicles-container .cards-container .card .card-body .text-header {
   margin-bottom: 10px;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-body .title {
+.main-container .vehicles-container .cards-container .card .card-body .title {
   font-weight: 500;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-body .text-group {
+.main-container .vehicles-container .cards-container .card .card-body .img-car {
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.main-container .vehicles-container .cards-container .card .card-body .descripcion-car {
+  margin-bottom: 0;
+}
+.main-container .vehicles-container .cards-container .card .card-body .text-group {
   margin-bottom: 5px;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-body .badge {
+.main-container .vehicles-container .cards-container .card .card-body .badge {
   font-size: 14px;
   font-weight: 450;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer {
+.main-container .vehicles-container .cards-container .card .card-footer {
   display: flex;
-  justify-content: space-between;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer .btn-group .btn {
+.main-container .vehicles-container .cards-container .card .card-footer .btn {
   position: relative;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer .btn-group #editarActividad:hover .label-editar {
+.main-container .vehicles-container .cards-container .card .card-footer #btnEditar:hover .label-editar {
   display: initial;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer .btn-group #eliminarActividad:hover .label-eliminar {
+.main-container .vehicles-container .cards-container .card .card-footer #btnEliminar:hover .label-eliminar {
   display: initial;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer .floatLabel {
+.main-container .vehicles-container .cards-container .card .card-footer .floatLabel {
   display: none;
   position: absolute;
   top: 40px;
@@ -110,7 +111,7 @@ body > * {
   width: max-content;
   transition: all 0.15s ease-in;
 }
-.main-container .ejercicio-container .actividades-container .card-actividad .card-footer .label-editar {
+.main-container .vehicles-container .cards-container .card .card-footer .label-editar {
   display: none;
 }
 
