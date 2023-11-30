@@ -100,14 +100,20 @@
                         </div>
                         <div class="mb-3">
                             <label for="year" class="col-form-label">Año:</label>
-                            <input class="form-control" type="number" min="1990" max="2030" id="year"></input>
+                            <input class="form-control" type="number" min="1900" max="2030" id="year"></input>
                         </div>
                         
                     </form>
                 </div>
                 <div class="modal-footer">
                   <button id="cerrarModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetForm()">Cerrar</button>
-                  <button id="botonCrear" type="button" class="btn btn-primary" onclick="guardarRegistro()">Guardar</button>
+                  <button 
+                    id="botonCrear" 
+                    type="button" 
+                    class="btn btn-primary" 
+                    onclick="guardarRegistro()">
+                    Guardar
+                  </button>
                   <button id="submitEdit" type="button" class="btn btn-success">Editar</button>
                 </div>
               </div>
